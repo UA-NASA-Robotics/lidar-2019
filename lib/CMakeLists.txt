@@ -2,22 +2,23 @@
 # Pepperl+Fuchs Driver Library
 #===============================================================================
 
-# Create a variable containing root directory of pepperl_fuchs
-# driver library
-
 set(DRIVER_LIBRARY_DIR ${PROJECT_SOURCE_DIR}/lib/pepperl_fuchs/pepperl_fuchs_r2000)
 
-# Since we are building the library for usage independent from
-# ROS, we must perform this step:
+# Replacing the default Pepperl+Fuchs CMakeLists.txt file
 
-if(EXISTS "${DRIVER_LIBRARY_DIR}/CMakeLists.txt.NO_ROS_LIB_ONLY")
-	message("Renaming the driver's CMakeLists.txt")
-	file(RENAME
-		"${DRIVER_LIBRARY_DIR}/CMakeLists.txt.NO_ROS_LIB_ONLY"
+file(
+	COPY
+		"CMakeLists.txt.pepperl_fuchs"
+	DESTINATION
+		"${DRIVER_LIBRARY_DIR}"
+)
+
+file(
+	RENAME
+		"${DRIVER_LIBRARY_DIR}/CMakeLists.txt.pepperl_fuchs"
 		"${DRIVER_LIBRARY_DIR}/CMakeLists.txt"
-	)
-else()
-	message("================HERE===================")
-endif()
+)
+
+# Adding subdirectory for the R2000 driver library
 
 add_subdirectory(${DRIVER_LIBRARY_DIR})

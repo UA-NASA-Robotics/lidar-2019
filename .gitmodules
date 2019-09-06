@@ -1,0 +1,3 @@
+[submodule "lib/pepperl_fuchs"]
+	path = lib/pepperl_fuchs
+	url = git@github.com:dillenberger/pepperl_fuchs.git

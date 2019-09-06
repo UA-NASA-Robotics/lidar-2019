@@ -12,13 +12,11 @@ sudo apt-get install libboost-all-dev
 
 Run the following commands to clone and build the lidar-2019 project:
 
-`
-git clone https://github.com/UA-NASA-Robotics/lidar-2019.git
-cd lidar-2019
-git submodule init
-git submodule update
-mkdir build
-cd build
-cmake ..
-make
-`
+`git clone https://github.com/UA-NASA-Robotics/lidar-2019.git`
+`cd lidar-2019`
+`git submodule init`
+`git submodule update`
+`mkdir build`
+`cd build`
+`cmake ..`
+`make`
